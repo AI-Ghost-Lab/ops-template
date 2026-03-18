@@ -1,0 +1,16 @@
+[Unit]
+Description=<service description>
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=<user>
+Group=<group>
+WorkingDirectory=/opt/<app>
+ExecStart=/usr/local/bin/<binary> --config /etc/<app>/config.yaml
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

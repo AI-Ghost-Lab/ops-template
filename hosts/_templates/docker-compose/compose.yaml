@@ -1,0 +1,10 @@
+services:
+  example-app:
+    image: ghcr.io/example/example-app:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - /srv/example-app/data:/app/data
+    environment:
+      TZ: Asia/Taipei

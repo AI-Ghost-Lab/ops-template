@@ -1,0 +1,20 @@
+# Router v0.1
+# 目的：把“用户一句话目标”快速路由到正确的 host / service / runbook。
+# 这里默认保留空列表，你可以按下面的示例格式自行添加。
+
+runbooks: []
+
+# Example:
+# - id: RB-EXAMPLE-SERVICE
+#   match:
+#     keywords: ["example", "service", "healthcheck"]
+#     negative_keywords: []
+#   scope:
+#     hosts: ["example-host-01"]
+#     services: ["example-service"]
+#   recommended_runbooks:
+#     - "docs/001.example-service-runbook-v1.md"
+#   prerequisites:
+#     - "replace this with your real prerequisite"
+#   risk_level: L1
+#   notes: "Replace this example with your real routing rule."

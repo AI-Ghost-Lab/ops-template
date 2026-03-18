@@ -1,0 +1,27 @@
+service_id: ""
+type: ""  # docker|docker-compose|systemd|nginx|custom
+description: ""
+
+risk_level: L1
+
+runs_on: []  # host_id list
+
+interfaces: []
+# interfaces:
+#   - kind: http
+#     listen: "0.0.0.0"
+#     port: 3000
+#     protocol: tcp
+#     path: "/healthz"
+#     notes: ""
+
+data: []
+# data:
+#   - kind: bind-mount
+#     path: "/srv/example"
+#     persistence: durable  # durable|ephemeral
+#     notes: ""
+
+dependencies: []
+runbooks: []
+notes: ""

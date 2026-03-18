@@ -1,0 +1,52 @@
+host_id: ""
+display_name: ""
+environment: home  # prod|staging|lab|home
+
+owner: ""
+location: ""
+
+access:
+  ssh:
+    host: ""         # ssh config alias 或 ip/hostname
+    port: 22
+    user: ""
+    via: ""          # 可选：跳板机 host_id / proxy
+
+os:
+  distro: ""
+  version: ""
+  arch: ""
+
+roles: []
+
+network:
+  public_ips: []
+  private_ips: []
+  notes: ""
+
+storage:
+  mounts:
+    - mount_point: ""
+      source: ""        # 例如：UUID=xxxx 或 /dev/sda1
+      fs: ""            # ext4/xfs/...
+      options: ""       # 例如：rw,noatime
+      critical_for: []  # 哪些服务依赖这个挂载点
+
+services: []
+# services:
+#   - service_id: ""
+#     state: unknown
+#     ports: []
+#     data_dirs: []
+#     runbooks: []
+#     notes: ""
+
+dependencies: []
+secrets_refs: []
+
+risk_notes: ""
+last_verified: ""  # YYYY-MM-DD
+
+links:
+  runbooks: []
+  wiki: []
