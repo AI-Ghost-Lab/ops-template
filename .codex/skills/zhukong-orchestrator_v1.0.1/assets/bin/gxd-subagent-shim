@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Local wrapper to ensure we always run the bundled shim sources shipped with this skill.
+# This avoids PATH/version drift and prevents accidentally invoking a global gxd-subagent-shim.
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SKILL_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+SHIM_SRC="${SKILL_ROOT}/assets/gxd-subagent-shim-0.2.3"
+
+# Preserve existing PYTHONPATH if present.
+if [[ -n "${PYTHONPATH:-}" ]]; then
+  export PYTHONPATH="${SHIM_SRC}:${PYTHONPATH}"
+else
+  export PYTHONPATH="${SHIM_SRC}"
+fi
+
+exec python -m gxd_subagent_shim "$@"

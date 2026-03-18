@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gxd-subagent-shim"
+version = "0.2.3"
+description = "Stdlib-only runner shim for codex / claude-code style backends."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+gxd-subagent-shim = "gxd_subagent_shim.cli:entrypoint"
+gxd_subagent_shim = "gxd_subagent_shim.cli:entrypoint"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gxd_subagent_shim*"]
